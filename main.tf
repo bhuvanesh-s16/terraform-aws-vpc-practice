@@ -18,8 +18,7 @@ resource "aws_internet_gateway" "web_gw" {
 resource "aws_subnet" "web_subnet" {
   vpc_id     = aws_vpc.web_vpc.id
   cidr_block = var.var_subnet_cidr #"10.0.1.0/24"
-  availability_zone = var.var_available_zone #"us-east-1a"
-
+  availability_zone = var.var_available_zone   # us-east-1a
   tags = {
     Name = "web_subnet"
   } 
@@ -43,6 +42,7 @@ resource "aws_route_table" "web_route_table" {
     Name = "web_route_table"
   }
 }
+
 #Creating route table association
 resource "aws_route_table_association" "web_subnet_association" {
   subnet_id      = aws_subnet.web_subnet.id
