@@ -94,3 +94,13 @@ name        = "allow_web_ssh"
     Name = "allow_web_ssh"
  }
 }
+module "instance-practice" {
+  source  = "app.terraform.io/infy--tfpractice/instance-practice/aws"
+  version = "1.0.0"
+  # insert required variables here
+  instance_type = var.instance_type
+  ami = var.ami
+  subnet_id = aws_subnet.web_subnet.id
+}
+  
+  
