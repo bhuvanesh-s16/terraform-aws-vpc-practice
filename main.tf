@@ -23,6 +23,7 @@ resource "aws_subnet" "web_subnet" {
   tags = {
     Name = "web_subnet"
   } 
+}
 
 #Creating route table
 resource "aws_route_table" "web_route_table" {
